@@ -24,6 +24,12 @@ class App extends Component {
         clicked: state.clicked.concat([id]),
         score: this.state.score + 1,
       }));
+    } else {
+      console.log("You lose!");
+      this.setState((state) => ({
+        clicked: [],
+        score: 0,
+      }));
     }
   };
 
