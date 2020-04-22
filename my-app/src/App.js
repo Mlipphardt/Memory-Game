@@ -7,10 +7,24 @@ class App extends Component {
   state = {
     characters: characters,
     clicked: [],
+    score: 0,
+    topScore: 0,
   };
 
-  handleClick = function (id) {
+  componentDidUpdate() {
+    if (this.state.score > this.state.topScore) {
+      this.setState({ topScore: this.state.score });
+    }
+  }
+
+  handleClick = (id) => {
     console.log("You clicked a button! ID: " + id);
+    if (!this.state.clicked.includes(id)) {
+      this.setState((state) => ({
+        clicked: state.clicked.concat([id]),
+        score: this.state.score + 1,
+      }));
+    }
   };
 
   render() {
