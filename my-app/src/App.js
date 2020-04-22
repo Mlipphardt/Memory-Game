@@ -11,8 +11,8 @@ class App extends Component {
   render() {
     return (
       <CharacterCard
-        name={this.state.characters.name}
-        image={this.state.characters.image}
+        name={this.state.characters[0].name}
+        image={this.state.characters[0].image}
       />
     );
   }
