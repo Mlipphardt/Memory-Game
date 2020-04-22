@@ -5,16 +5,18 @@ import characters from "./characters.json";
 
 class App extends Component {
   state = {
-    characters,
+    characters: characters,
+    clicked: [],
+  };
+
+  displayCharacters = function () {
+    console.log("hi");
   };
 
   render() {
-    return (
-      <CharacterCard
-        name={this.state.characters[0].name}
-        image={this.state.characters[0].image}
-      />
-    );
+    return this.state.characters.map((character) => {
+      return <CharacterCard name={character.name} image={character.image} />;
+    });
   }
 }
 
