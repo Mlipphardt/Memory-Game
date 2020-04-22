@@ -9,13 +9,21 @@ class App extends Component {
     clicked: [],
   };
 
-  displayCharacters = function () {
-    console.log("hi");
+  handleClick = function (id) {
+    console.log("You clicked a button! ID: " + id);
   };
 
   render() {
     return this.state.characters.map((character) => {
-      return <CharacterCard name={character.name} image={character.image} />;
+      return (
+        <CharacterCard
+          name={character.name}
+          image={character.image}
+          key={character.id}
+          id={character.id}
+          handleClick={this.handleClick}
+        />
+      );
     });
   }
 }
