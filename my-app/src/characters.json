@@ -1,4 +1,46 @@
-{
-  "name": "jellyfish",
-  "image": "https://upload.wikimedia.org/wikipedia/commons/4/44/Jelly_cc11.jpg"
-}
+[
+  {
+    "name": "jellyfish",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/44/Jelly_cc11.jpg"
+  },
+  {
+    "name": "bioluminescent shrimp",
+    "image": "https://oceanexplorer.noaa.gov/edu/themes/bioluminescence/images/essays.jpg"
+  },
+  {
+    "name": "anglerfish",
+    "image": "https://www.dw.com/image/42168895_303.jpg"
+  },
+  {
+    "name": "blobfish",
+    "image": "https://lp-cms-production.imgix.net/news/2017/06/blobfish-1-e1496640508583.jpg?format=auto"
+  },
+  {
+    "name": "giant squid",
+    "image": "https://thefuzzypuffin.com/wp-content/uploads/2018/05/giant-squid-600x343.jpg"
+  },
+  {
+    "name": "whale shark",
+    "image": "https://cdn.mos.cms.futurecdn.net/HXF7kE8J5brioWeDzMSSGB-320-80.jpg"
+  },
+  {
+    "name": "cuttlefish",
+    "image": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/02/05/16/istock-540984424.jpg?w968h681"
+  },
+  {
+    "name": "clownfish",
+    "image": "https://www.aquariumofpacific.org/images/made/images/uploads/clownfish_1000_750_80auto_s.jpg"
+  },
+  {
+    "name": "sea slug",
+    "image": "https://i.pinimg.com/originals/e0/d6/d7/e0d6d7c3e65f206b6fea9e0859ecb062.jpg"
+  },
+  {
+    "name": "sea turtle",
+    "image": "https://oceana.org/sites/default/files/styles/large_1000x643/public/seaturtlesandreptiles.jpg?itok=pULuF0mF"
+  },
+  {
+    "name": "seahorse",
+    "image": "https://images.unsplash.com/photo-1572317708804-41107920bee5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+  }
+]
