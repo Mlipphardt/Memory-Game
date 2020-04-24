@@ -53,5 +53,10 @@
     "id": 11,
     "name": "seahorse",
     "image": "https://images.unsplash.com/photo-1572317708804-41107920bee5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+  },
+  {
+    "id": 12,
+    "name": "pufferfish",
+    "image": "https://secure.i.telegraph.co.uk/multimedia/archive/03084/puffer_fish_3084634b.jpg"
   }
 ]

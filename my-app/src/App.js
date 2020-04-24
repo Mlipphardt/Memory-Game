@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import CharacterCard from "./components/CharacterCard";
+import Wrapper from "./components/Wrapper";
 import characters from "./characters.json";
 
 class App extends Component {
@@ -60,17 +61,19 @@ class App extends Component {
   };
 
   render() {
-    return this.state.characters.map((character) => {
-      return (
-        <CharacterCard
-          name={character.name}
-          image={character.image}
-          key={character.id}
-          id={character.id}
-          handleClick={this.handleClick}
-        />
-      );
-    });
+    return (
+      <Wrapper>
+        {this.state.characters.map((character) => (
+          <CharacterCard
+            name={character.name}
+            image={character.image}
+            key={character.id}
+            id={character.id}
+            handleClick={this.handleClick}
+          />
+        ))}
+      </Wrapper>
+    );
   }
 }
 
