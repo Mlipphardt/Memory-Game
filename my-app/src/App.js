@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import CharacterCard from "./components/CharacterCard";
 import Wrapper from "./components/Wrapper";
+import Navbar from "./components/Navbar";
 import characters from "./characters.json";
 
 class App extends Component {
@@ -62,17 +63,20 @@ class App extends Component {
 
   render() {
     return (
-      <Wrapper>
-        {this.state.characters.map((character) => (
-          <CharacterCard
-            name={character.name}
-            image={character.image}
-            key={character.id}
-            id={character.id}
-            handleClick={this.handleClick}
-          />
-        ))}
-      </Wrapper>
+      <div>
+        <Navbar score={this.state.score} topScore={this.state.topScore} />
+        <Wrapper>
+          {this.state.characters.map((character) => (
+            <CharacterCard
+              name={character.name}
+              image={character.image}
+              key={character.id}
+              id={character.id}
+              handleClick={this.handleClick}
+            />
+          ))}
+        </Wrapper>
+      </div>
     );
   }
 }
