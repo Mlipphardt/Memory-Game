@@ -3,8 +3,9 @@ nav {
   min-height: 75px;
   background-color: blue;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 30px;
   font-size: xx-large;
+  position: fixed;
 }
 
 .nav-item {
