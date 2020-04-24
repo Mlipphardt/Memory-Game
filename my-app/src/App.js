@@ -3,6 +3,7 @@ import "./App.css";
 import CharacterCard from "./components/CharacterCard";
 import Wrapper from "./components/Wrapper";
 import Navbar from "./components/Navbar";
+import Header from "./components/Header";
 import characters from "./characters.json";
 
 class App extends Component {
@@ -65,6 +66,7 @@ class App extends Component {
     return (
       <div>
         <Navbar score={this.state.score} topScore={this.state.topScore} />
+        <Header />
         <Wrapper>
           {this.state.characters.map((character) => (
             <CharacterCard
