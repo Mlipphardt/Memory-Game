@@ -33,9 +33,9 @@ class App extends Component {
       //Rolls to pick a random unshuffled item.
       rolledIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
-      //Back of array item saved.
+      //Back of array of unshuffled item saved.
       tempHolder = array[currentIndex];
-      //Randomly rolled item placed in back of array.
+      //Randomly rolled item placed in back of unshuffled array items.
       array[currentIndex] = array[rolledIndex];
       //Former rolled index now becomes the number formerly in the back of the unshuffled array.
       array[rolledIndex] = tempHolder;
@@ -55,6 +55,12 @@ class App extends Component {
       }));
     } else {
       console.log("You lose!");
+      document.getElementById("wrapper").classList.add("wrapper-shake");
+      setTimeout(
+        () =>
+          document.getElementById("wrapper").classList.remove("wrapper-shake"),
+        1000
+      );
       this.setState((state) => ({
         clicked: [],
         score: 0,
@@ -67,17 +73,19 @@ class App extends Component {
       <div>
         <Navbar score={this.state.score} topScore={this.state.topScore} />
         <Header />
-        <Wrapper>
-          {this.state.characters.map((character) => (
-            <CharacterCard
-              name={character.name}
-              image={character.image}
-              key={character.id}
-              id={character.id}
-              handleClick={this.handleClick}
-            />
-          ))}
-        </Wrapper>
+        <div id="background">
+          <Wrapper>
+            {this.state.characters.map((character) => (
+              <CharacterCard
+                name={character.name}
+                image={character.image}
+                key={character.id}
+                id={character.id}
+                handleClick={this.handleClick}
+              />
+            ))}
+          </Wrapper>
+        </div>
       </div>
     );
   }
