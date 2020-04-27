@@ -3,6 +3,7 @@ import "./App.css";
 import CharacterCard from "./components/CharacterCard";
 import Wrapper from "./components/Wrapper";
 import Navbar from "./components/Navbar";
+import Modal from "./components/Modal";
 import Header from "./components/Header";
 import characters from "./characters.json";
 
@@ -38,7 +39,7 @@ class App extends Component {
       this.incrementScore(id);
     } else if (this.state.clicked.length === 11) {
       //If all pictures have been clicked, display win modal.
-      this.incrementScore(id);
+      this.setState({ topScore: 12 });
       this.resetGame();
       document.getElementById("results-text").textContent = "You win!";
       this.modalSwitch();
@@ -100,6 +101,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <Modal />
         <Navbar score={this.state.score} topScore={this.state.topScore} />
         <Header />
         <div id="background">
