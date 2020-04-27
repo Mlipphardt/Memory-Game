@@ -21,6 +21,59 @@ class App extends Component {
     }
   }
 
+  //Increments score by one.
+  incrementScore = (id) => {
+    this.setState((state) => ({
+      clicked: state.clicked.concat([id]),
+      score: this.state.score + 1,
+    }));
+  };
+
+  // Fires if image clicked
+  handleClick = (id) => {
+    //Shuffles characters in state, redisplays them in new order.
+    this.setState({ characters: this.shuffleArray(characters) });
+    //If picture has not been clicked this game, keep track in state, add to score.
+    if (!this.state.clicked.includes(id) && this.state.clicked.length < 11) {
+      this.incrementScore(id);
+    } else if (this.state.clicked.length === 11) {
+      //If all pictures have been clicked, display win modal.
+      this.incrementScore(id);
+      this.resetGame();
+      document.getElementById("results-text").textContent = "You win!";
+      this.modalSwitch();
+    } else {
+      //If picture has been clicked this game, show loss, reset score.
+      //Shakes pictures upon loss.
+      document.getElementById("wrapper").classList.add("wrapper-shake");
+      setTimeout(
+        () =>
+          document.getElementById("wrapper").classList.remove("wrapper-shake"),
+        1000
+      );
+      //Display loss to user in modal.
+      document.getElementById("results-text").textContent = "You lose!";
+      this.modalSwitch();
+      this.resetGame();
+    }
+  };
+
+  //Displays modal for 2 seconds upon win or loss.
+  modalSwitch = () => {
+    document.getElementById("results-modal").classList.add("show");
+    setTimeout(() => {
+      document.getElementById("results-modal").classList.remove("show");
+    }, 2000);
+  };
+
+  //Resets game
+  resetGame = () => {
+    this.setState((state) => ({
+      clicked: [],
+      score: 0,
+    }));
+  };
+
   //Fisher-Yates algorithim for shuffling cards.
   shuffleArray(array) {
     //Variables to save current index, save a random index, and transfer numbers.
@@ -43,30 +96,6 @@ class App extends Component {
     //Return the shuffled array.
     return array;
   }
-
-  handleClick = (id) => {
-    this.setState({ characters: this.shuffleArray(characters) });
-    //let shuffled = this.shuffleArray(shuffleReady);
-    console.log("You clicked a button! ID: " + id);
-    if (!this.state.clicked.includes(id)) {
-      this.setState((state) => ({
-        clicked: state.clicked.concat([id]),
-        score: this.state.score + 1,
-      }));
-    } else {
-      console.log("You lose!");
-      document.getElementById("wrapper").classList.add("wrapper-shake");
-      setTimeout(
-        () =>
-          document.getElementById("wrapper").classList.remove("wrapper-shake"),
-        1000
-      );
-      this.setState((state) => ({
-        clicked: [],
-        score: 0,
-      }));
-    }
-  };
 
   render() {
     return (
