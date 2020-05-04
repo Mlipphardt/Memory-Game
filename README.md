@@ -2,9 +2,9 @@
 
 This is a Memory Game powered by React and featuring a deep sea creatures theme! Users can click on the images in order to earn points, but beware! Click on the same image twice and you'll lose! The images shuffle around with every click - Can you remember which ones you've clicked and find all twelve?
 
-## Try it out for yourself! [Mlipphardt.github.io/Memory_Game]
+## [Try it out for yourself!](Mlipphardt.github.io/Memory_Game)
 
-![Memory Game demonstration](https://github.com/Mlipphardt/Memory-Game/public/demo-intro-picture.png "Memory Game demonstration.")
+![Memory Game demonstration](https://github.com/Mlipphardt/Memory-Game/blob/master/public/demo-intro-picture.png)
 
 ---
 
